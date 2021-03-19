@@ -1,0 +1,225 @@
+# This is a tic tac toe game with added GUI, its player1:"X" vs player:2 O", also having a cascading style menu  to reset or quit the game
+
+from tkinter import *
+from tkinter import messagebox
+import random
+
+root=Tk()
+root.title('ZERO-KATTA')
+
+event = True#if iam not passing this outside the function the value doesnt update,because when second button is press it will call the function and the value of event will be True again , as it was passed as local.
+count = 0
+
+winner=False
+
+def button_diss():
+    B1.configure(state=DISABLED)
+    B2.configure(state=DISABLED)
+    B3.configure(state=DISABLED)
+    B4.configure(state=DISABLED)
+    B5.configure(state=DISABLED)
+    B6.configure(state=DISABLED)
+    B7.configure(state=DISABLED)
+    B8.configure(state=DISABLED)
+    B9.configure(state=DISABLED)
+
+def check_win():
+    global winner,count
+    winner = False
+
+# CHECK FOR X WINS
+    if B1["text"]=="X" and B2["text"]=="X" and B3["text"]=="X":
+        B1.configure(bg="red")
+        B2.configure(bg="red")
+        B3.configure(bg="red")
+        messagebox.showinfo("winner message","X is the winner \n CONGRATULATIONS!!!")
+        button_diss()
+        winner = True
+
+    elif B2["text"]=="X" and B5["text"]=="X" and B8["text"]=="X":
+        B2.configure(bg="red")
+        B5.configure(bg="red")
+        B8.configure(bg="red")
+        messagebox.showinfo("winner message", "X is the winner \n CONGRATULATIONS!!!")
+        button_diss()
+        winner = True
+
+    elif B3["text"] == "X" and B6["text"] == "X" and B9["text"] == "X":
+        B3.configure(bg="red")
+        B6.configure(bg="red")
+        B9.configure(bg="red")
+        messagebox.showinfo("winner message", "X is the winner \n CONGRATULATIONS!!!")
+        button_diss()
+        winner = True
+
+    elif B1["text"] == "X" and B4["text"] == "X" and B7["text"] == "X":
+        B1.configure(bg="red")
+        B4.configure(bg="red")
+        B7.configure(bg="red")
+        messagebox.showinfo("winner message", "X is the winner \n CONGRATULATIONS!!!")
+        button_diss()
+        winner = True
+
+    elif B7["text"] == "X" and B8["text"] == "X" and B9["text"] == "X":
+        B7.configure(bg="red")
+        B8.configure(bg="red")
+        B9.configure(bg="red")
+        messagebox.showinfo("winner message", "X is the winner \n CONGRATULATIONS!!!")
+        button_diss()
+        winner = True
+
+    elif B3["text"] == "X" and B5["text"] == "X" and B7["text"] == "X":
+        B3.configure(bg="red")
+        B5.configure(bg="red")
+        B7.configure(bg="red")
+        messagebox.showinfo("winner message", "X is the winner \n CONGRATULATIONS!!!")
+        button_diss()
+        winner = True
+
+    elif B1["text"] == "X" and B5["text"] == "X" and B9["text"] == "X":
+        B1.configure(bg="red")
+        B5.configure(bg="red")
+        B9.configure(bg="red")
+        messagebox.showinfo("winner message", "X is the winner \n CONGRATULATIONS!!!")
+        button_diss()
+        winner = True
+
+    elif B4["text"] == "X" and B5["text"] == "X" and B6["text"] == "X":
+        B4.configure(bg="red")
+        B5.configure(bg="red")
+        B6.configure(bg="red")
+        messagebox.showinfo("winner message", "X is the winner \n CONGRATULATIONS!!!")
+        button_diss()
+        winner = True
+
+
+#CHECK FOR O WINS
+    if B1["text"]=="O" and B2["text"]=="O" and B3["text"]=="O":
+        B1.configure(bg="red")
+        B2.configure(bg="red")
+        B3.configure(bg="red")
+        messagebox.showinfo("winner message", "O is the winner \n CONGRATULATIONS!!!")
+        button_diss()
+        winner = True
+
+    elif B2["text"]=="O" and B5["text"]=="O" and B8["text"]=="O":
+        B2.configure(bg="red")
+        B5.configure(bg="red")
+        B8.configure(bg="red")
+        messagebox.showinfo("winner message", "O is the winner \n CONGRATULATIONS!!!")
+        button_diss()
+        winner = True
+
+    elif B3["text"] == "O" and B6["text"] == "O" and B9["text"] == "O":
+        B3.configure(bg="red")
+        B6.configure(bg="red")
+        B9.configure(bg="red")
+        messagebox.showinfo("winner message", "O is the winner \n CONGRATULATIONS!!!")
+        button_diss()
+        winner = True
+
+    elif B1["text"] == "O" and B4["text"] == "O" and B7["text"] == "O":
+        B1.configure(bg="red")
+        B4.configure(bg="red")
+        B7.configure(bg="red")
+        messagebox.showinfo("winner message", "O is the winner \n CONGRATULATIONS!!!")
+        button_diss()
+        winner = True
+
+    elif B7["text"] == "O" and B8["text"] == "O" and B9["text"] == "O":
+        B7.configure(bg="red")
+        B8.configure(bg="red")
+        B9.configure(bg="red")
+        messagebox.showinfo("winner message", "O is the winner \n CONGRATULATIONS!!!")
+        button_diss()
+        winner = True
+
+    elif B3["text"] == "O" and B5["text"] == "O" and B7["text"] == "O":
+        B3.configure(bg="red")
+        B5.configure(bg="red")
+        B7.configure(bg="red")
+        messagebox.showinfo("winner message", "O is the winner \n CONGRATULATIONS!!!")
+        button_diss()
+        winner = True
+
+    elif B1["text"] == "O" and B5["text"] == "O" and B9["text"] == "O":
+        B1.configure(bg="red")
+        B5.configure(bg="red")
+        B9.configure(bg="red")
+        messagebox.showinfo("winner message", "O is the winner \n CONGRATULATIONS!!!")
+        button_diss()
+        winner = True
+
+    elif B4["text"] == "O" and B5["text"] == "O" and B6["text"] == "O":
+        B4.configure(bg="red")
+        B5.configure(bg="red")
+        B6.configure(bg="red")
+        messagebox.showinfo("winner message", "O is the winner \n CONGRATULATIONS!!!")
+        button_diss()
+        winner = True
+
+    #CHECK IF THE GAME IS A TIE
+    elif winner==False and count==9:
+        messagebox.showinfo("DRAW", "NOONE WINS \n ITS A TIE!!!")
+        button_diss()
+
+
+
+
+
+def fnc_code(B):
+    global event,count #if iam not pasing them as global variable the code shows error:used before assignment,UnboundLocalError: local variable 'event' referenced before assignment
+    if B["text"]=="" and event==True: #we can grab the text from [b.configure(root,text="")] like this
+        B["text"] = "X"
+        event=False
+        count=count+1
+        check_win()
+    elif B["text"]=="" and event==False:
+        B["text"] = "O"
+        event=True
+        count=count+1
+        check_win()
+    else:
+        messagebox.showerror('zero_katta',"the space have already been filled!!\n select another box")
+
+#reset the game
+def reset():
+    global B1,B2,B3,B4,B5,B6,B7,B8,B9
+
+    B1=Button(root,text="",font=("helvetica",12,"bold"),height=3,width=5,command=lambda:fnc_code(B1))
+    B2=Button(root,text="",font=("helvetica",12,"bold"),height=3,width=5,command=lambda:fnc_code(B2))
+    B3=Button(root,text="",font=("helvetica",12,"bold"),height=3,width=5,command=lambda:fnc_code(B3))
+
+    B4=Button(root,text="",font=("helvetica",12,"bold"),height=3,width=5,command=lambda:fnc_code(B4))
+    B5=Button(root,text="",font=("helvetica",12,"bold"),height=3,width=5,command=lambda:fnc_code(B5))
+    B6=Button(root,text="",font=("helvetica",12,"bold"),height=3,width=5,command=lambda:fnc_code(B6))
+
+    B7=Button(root,text="",font=("helvetica",12,"bold"),height=3,width=5,command=lambda:fnc_code(B7))
+    B8=Button(root,text="",font=("helvetica",12,"bold"),height=3,width=5,command=lambda:fnc_code(B8))
+    B9=Button(root,text="",font=("helvetica",12,"bold"),height=3,width=5,command=lambda:fnc_code(B9))
+
+    B1.grid(row=0,column=0)
+    B2.grid(row=0,column=1)
+    B3.grid(row=0,column=2)
+
+    B4.grid(row=1,column=0)
+    B5.grid(row=1,column=1)
+    B6.grid(row=1,column=2)
+
+    B7.grid(row=2,column=0)
+    B8.grid(row=2,column=1)
+    B9.grid(row=2,column=2)
+
+#adding menu
+menu_1=Menu(root)
+root.configure(menu=menu_1)
+
+#adding options to the menu
+menu_2=Menu(menu_1,tearoff=False)
+menu_1.add_cascade(label="option",menu=menu_2)
+menu_2.add_command(label="Reset",command=reset)
+menu_2.add_separator()
+menu_2.add_command(label="Quit",command=root.quit)
+
+reset()
+root.mainloop()
